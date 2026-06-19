@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE D & A – Curriculum Vitae</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+         <style>
+        /* BASE VARIABLES */
+        :root {
+            --main-brown: #3c2415;
+            --light-brown: #523624;
+            --tan-accent: #cda88a;
+            --tan-light: #dfc4ad;
+            --cream-bg: #eaddcf;
+            --pure-white: #ffffff;
+        }
+
+
+        /* GLOBAL STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--main-brown);
+            color: var(--pure-white);
+        }
+
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--cream-bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--main-brown);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--main-brown);
+            text-decoration: none;
+        }
+
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* REUSABLE CLASSES */
+        .section-padding {
+            padding: 80px 50px;
+        }
+
+        .heading-large {
+            font-family: 'Playfair Display', serif;
+            font-size: 70px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .pill-button {
+            display: inline-block;
+            padding: 15px 45px;
+            background-color: var(--tan-accent);
+            color: var(--pure-white);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pill-button:hover {
+            background-color: var(--tan-light);
+        }
+
+        .pill-button {
+            /*Enables flexbox centering for any content inside the button, including icons*/
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .gray-box {
+            background-color: var(--tan-light);
+            color: var(--main-brown);
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* Keeps cropped images cleanly inside borders */
+        }
+
+
+        /* HERO SECTION */
+        #index-section {
+            display: flex;
+            min-height: 80vh;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 80px;
+        }
+
+        .hero-text {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--tan-light);
+        }
+
+        .hero-p {
+            text-align: justify;
+            font-size: 18px;
+            color: var(--cream-bg);
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .hero-hint {
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .hero-image-side {
+            width: 35.7%;
+        }
+
+        .main-hero-photo {
+            width: 450px;
+            height: 450px;
+        }
+
+        .card-photos {
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+        }
+
+
+        /* SOCIAL BAR */
+        .middle-strip {
+            background-color: var(--cream-bg);
+            color: var(--main-brown);
+            padding: 40px 80px;
+        }
+
+        .strip-info-label {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .strip-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 45px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .strip-copyright {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 20px;
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+
+
+        /* PROFILE SECTION */
+        #profile-section {
+            background-color: var(--light-brown);
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .profile-card {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-photo {
+            width: 100%;
+            height: 520px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+          .card-nix {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 300ms ease;
+        }
+
+        .card-nix:hover {
+            transform: scale(1.1);
+        }
+
+        .card-aubs {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 300ms ease;
+        }
+
+        .card-aubs:hover {
+            transform: scale(1.1);
+        }
+
+        /* PROFILE TABLE STYLES */
+        .profile-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--pure-white);
+        }
+
+        .profile-table th,
+        .profile-table td {
+            padding: 10px 14px;
+            border: 2px solid var(--tan-accent);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .profile-table th {
+            background-color: var(--tan-accent);
+            color: var(--main-brown);
+            width: 40%;
+            white-space: nowrap;
+        }
+
+        .profile-table td {
+            background-color: var(--light-brown);
+        }
+
+        .profile-table td ul {
+            list-style: disc;
+            padding-left: 18px;
+        }
+
+        .profile-table td ul li {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .card-owner-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px
+        }
+
+        .list-style {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .list-style li {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .list-style li::before {
+            content: "• ";
+            color: var(--pure-white);
+        }
+
+        .achievements-buttons-row1 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .achievements-buttons-row2 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .achievements-buttons-row .pill-button {
+            width: 250px;
+            text-align: center;
+        }
+
+        .achievements-buttons-row .pill-button {
+            width: 250px;
+            text-align: center;
+        }
+
+
+        /* CV PROFILES SCREEN */
+        #cv-section {
+            background-color: var(--main-brown);
+        }
+
+        .cv-blocks-layout {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .cv-large-frame {
+            width: 48%;
+            height: 380px;
+            position: relative;
+        }
+
+        .corner-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--tan-accent);
+        }
+
+        .cv-bottom-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE DESIGN (MOBILE FIXES) */
+        @media (max-width: 850px) {
+            nav {
+                padding: 20px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+            #index-section {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .hero-text {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-text .pill-button {
+                align-self: center;
+            }
+
+            .hero-image-side {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .cards-container,
+            .cv-blocks-layout,
+            .input-split-row,
+            .achievements-buttons-row,
+            .social-links-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .social-links-container {
+                align-items: center;
+                gap: 15px;
+            }
+
+            .profile-card,
+            .cv-large-frame {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<nav>
+    <a href="index.html" class="logo">THE D &amp; A</a>
+    <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="nixcv.html">Danica's Resume</a></li>
+        <li><a href="aubscv.html">Aubrey's Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+       
+    <section id="profile-section" class="section-padding">
+        <h2 class="heading-large">Our Profile</h2>
+
+
+        <div class="cards-container">
+            <div class="profile-card">
+                <div class="gray-box card-photo">
+                    <img src="image/nixphoto.jpg" alt="nix" class="card-nix">
+                </div>
+
+                <p class="card-owner-title">Danica N. Cervantes' Profile:</p>
+                <table class="profile-table">
+                    <tr>
+                        <th>First Name</th>
+                        <td>Danica</td>
+                    </tr>
+                    <tr>
+                        <th>Middle Name</th>
+                        <td>Nicodemus</td>
+                    </tr>
+                    <tr>
+                        <th>Surname</th>
+                        <td>Cervantes</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <th>Sex</th>
+                        <td>Female</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>December 3, 2006</td>
+                    </tr>
+                    <tr>
+                        <th>Place of Birth</th>
+                        <td>Malolos City</td>
+                    </tr>
+                    <tr>
+                        <th>Nationality</th>
+                        <td>Filipino</td>
+                    </tr>
+                    <tr>
+                        <th>Hobbies</th>
+                        <td>
+                            <ul>
+                                <li>Video Games</li>
+                                <li>Baking</li>
+                                <li>Reading</li>
+                                <li>Cooking</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="profile-card">
+                <div class="gray-box card-photo">
+                    <img src="image/aubsphoto.jpg" alt="aubs" class="card-aubs">
+                </div>
+
+                <p class="card-owner-title">Aubrey Thea E. Pulido's Profile:</p>
+                <table class="profile-table">
+                    <tr>
+                        <th>First Name</th>
+                        <td>Aubrey Thea</td>
+                    </tr>
+                    <tr>
+                        <th>Middle Name</th>
+                        <td>Elona</td>
+                    </tr>
+                    <tr>
+                        <th>Surname</th>
+                        <td>Pulido</td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th>Sex</th>
+                        <td>Female</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>December 28, 2005</td>
+                    </tr>
+                    <tr>
+                        <th>Place of Birth</th>
+                        <td>Polomolok, South Cotabato</td>
+                    </tr>
+                    <tr>
+                        <th>Nationality</th>
+                        <td>Filipino</td>
+                    </tr>
+                    <tr>
+                        <th>Hobbies</th>
+                        <td>
+                            <ul>
+                                <li>Content Creation</li>
+                                <li>Cafe Hopping</li>
+                                <li>Sleeping</li>
+                                <li>Writing</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="achievements-buttons-row1">
+            <a href="nixcv.html" class="pill-button">Danica's Resume</a>
+            <a href="aubscv.html" class="pill-button">Aubrey's Resume</a>
+        </div>
+    </section>
+
+</body>
+</html>

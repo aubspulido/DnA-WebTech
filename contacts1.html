@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<style>
+         /* BASE VARIABLES */
+        :root {
+            --main-brown: #3c2415;
+            --light-brown: #523624;
+            --tan-accent: #cda88a;
+            --tan-light: #dfc4ad;
+            --cream-bg: #eaddcf;
+            --pure-white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--main-brown);
+            color: var(--pure-white);
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+
+        .pill-button {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .pill-button1 {
+            color: var(--pure-white);
+            text-decoration: none;
+            background-color: var(--light-brown);
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+
+        .pill-button1:hover {
+            background-color: var(--tan-accent);
+            color: var(--main-brown);
+        }
+
+        /* REUSABLE CLASSES */
+        .section-padding {
+            padding: 80px 50px;
+        }
+
+        .heading-large {
+            font-family: 'Playfair Display', serif;
+            font-size: 70px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .pill-button {
+            display: inline-block;
+            padding: 15px 45px;
+            background-color: var(--tan-accent);
+            color: var(--pure-white);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pill-button:hover {
+            background-color: var(--tan-light);
+        }
+
+        .pill-button {
+            /*Enables flexbox centering for any content inside the button, including icons*/
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pill-button1 {
+            display: inline-block;
+            padding: 15px 45px;
+            background-color: var(--main-brown);
+            color: var(--pure-white);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pill-button1:hover {
+            background-color: var(--tan-light);
+        }
+
+        .pill-button1 {
+            /*Enables flexbox centering for any content inside the button, including icons*/
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* SOCIAL BAR */
+        .middle-strip {
+            background-color: var(--cream-bg);
+            color: var(--main-brown);
+            padding: 40px 80px;
+        }
+
+        .strip-info-label {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .strip-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 45px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .strip-copyright {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 20px;
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+
+          /* CONTACT SECTION */
+        #contact-section {
+            background-color: var(--main-brown);
+            padding: 60px 15%;
+        }
+
+        .contact-container-form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .input-split-row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .field-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%
+        }
+
+        .field-block label {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .field-block input {
+            background-color: var(--tan-accent);
+            border: none;
+            color: var(--pure-white);
+            font-size: 18px;
+            padding: 15px 25px;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .field-block textarea {
+            background-color: var(--tan-accent);
+            border: none;
+            color: var(--pure-white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 25px;
+            height: 180px;
+            resize: none;
+            outline: none;
+        }
+
+        .field-block input:focus,
+        .field-block textarea:focus {
+            background-color: var(--tan-light);
+            color: var(--main-brown);
+        }
+
+        .form-button-align {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--main-brown);
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--light-brown);
+        }
+
+        /* FACEBOOK ICON LINKS LAYOUT */
+        .social-links-container {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            justify-content: center;
+            gap: 40px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .social-links-container a:nth-child(1),
+        .social-links-container a:nth-child(2) {
+            justify-self: center;
+        }
+
+        .social-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--main-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-link i {
+            font-size: 26px;
+        }
+
+        .social-link:hover {
+            color: var(--light-brown);
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE DESIGN (MOBILE FIXES) */
+    @media (max-width: 850px) {
+        nav {
+            padding: 20px;
+        }
+
+        .section-padding {
+            padding: 40px 20px;
+        }
+
+        .heading-large {
+            font-size: 40px; /* Scales down your massive section headers for small screens */
+            margin-bottom: 25px;
+        }
+
+        /* Forces side-by-side columns to stack vertically on mobile phones */
+        .cv-section-block,
+        .input-split-row {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Allows labels and description blocks to take up full mobile width */
+        .cv-left-column, 
+        .cv-right-column {
+            width: 100%;
+            min-width: 100%;
+        }
+
+        /* Reduces text indentation slightly so content doesn't get squished */
+        .achievement-details p {
+            margin-left: 15px; 
+        }
+
+        #contact-section {
+            padding: 40px 20px;
+        }
+
+        /* Centers your form buttons cleanly on mobile viewports */
+        .form-button-align {
+            justify-content: center; 
+        }
+
+        .middle-strip {
+            padding: 30px 20px;
+        }
+
+        .strip-heading {
+            font-size: 28px;
+        }
+
+        /* Converts the social media link grid into a single-column stacking list */
+        .social-links-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            justify-items: center;
+        }
+    }
+</style>
+
+
+<body>
+       
+<nav>
+    <a href="nixcv.html" class="pill-button1">← Back to Profile</a>
+</nav>
+
+<section id="contact-section">
+    <h2 class="heading-large">Contact Us Now</h2>
+
+    <form class="contact-container-form" action="#" method="POST">
+        <div class="input-split-row">
+            <div class="field-block">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" required />
+            </div>
+
+                <div class="field-block">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" required />
+                </div>
+            </div>
+
+            <div class="input-split-row">
+                <div class="field-block">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+            </div>
+
+                 <div class="input-split-row">
+                <div class="field-block">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-button-align">
+                <button type="submit" class="pill-button">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <div class="middle-strip">
+        <p class="strip-heading">Social Media Accounts</p>
+
+        <div class="social-links-container">
+            <a href="https://www.facebook.com/danica.crvnts" target="_blank" class="social-link">
+                <i class="fa-brands fa-facebook"></i> Danica N. Cervantes
+            </a>
+            <a href="https://www.facebook.com/share/1KhsHCp938/?mibextid=wwXIfr" target="_blank" class="social-link">
+                <i class="fa-brands fa-facebook"></i> Aubrey Thea E. Pulido
+            </a>
+        </div>
+
+        <p class="strip-copyright">© 2026 THE D&amp;A. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

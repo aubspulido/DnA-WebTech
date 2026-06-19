@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal CV – Danica N. Cervantes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<style>
+    :root {
+        --main-brown: #3c2415;
+        --light-brown: #523624;
+        --tan-accent: #cda88a;
+        --tan-light: #dfc4ad;
+        --cream-bg: #eaddcf;
+        --pure-white: #ffffff;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background-color: var(--main-brown);
+        color: var(--pure-white);
+    }
+
+    /* NAVIGATION */
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 20px 40px;
+    }
+
+    .pill-button {
+        color: var(--pure-white);
+        text-decoration: none;
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .pill-button1 {
+        color: var(--pure-white);
+        text-decoration: none;
+        background-color: var(--light-brown);
+        display: inline-block;
+        font-family: 'Playfair Display', serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 24px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .pill-button1:hover {
+        background-color: var(--tan-accent);
+        color: var(--main-brown);
+    }
+
+    /* CV SECTION */
+    #cv-section {
+        background-color: var(--main-brown);
+        padding: 40px 50px 60px;
+        color: var(--pure-white);
+    }
+
+    /* TOP ROW */
+    .cv-top-row {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cv-top-row h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        font-size: clamp(26px, 5vw, 40px);
+        color: var(--tan-light);
+        line-height: 1.2;
+    }
+
+    .cv-top-row h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: clamp(14px, 2.5vw, 18px);
+        color: var(--tan-accent);
+        margin-top: 6px;
+    }
+
+    /* DIVIDER */
+    .cv-divider {
+        border: none;
+        height: 2px;
+        background-color: var(--tan-accent);
+        width: 100%;
+        margin: 24px 0;
+    }
+
+    /* SECTION BLOCK — two-column on desktop, stacked on mobile */
+    .cv-section-block {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 0 40px;
+        width: 100%;
+    }
+
+    .cv-left-column h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: clamp(18px, 3vw, 24px);
+        color: var(--tan-accent);
+        padding-top: 4px;
+    }
+
+    /* ACHIEVEMENT BLOCKS */
+    .achievement-block {
+        margin-bottom: 18px;
+    }
+
+    .achievement-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .achievement-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(14px, 2vw, 16px);
+        color: var(--pure-white);
+        margin-bottom: 4px;
+    }
+
+    .achievement-details p {
+        margin-left: 16px;
+        margin-bottom: 6px;
+        font-size: clamp(13px, 1.8vw, 15px);
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        text-align: justify;
+        color: var(--tan-light);
+        line-height: 1.6;
+    }
+
+    .achievement-details p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* BOTTOM ROW */
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0 10px;
+    }
+
+    /* ── RESPONSIVE BREAKPOINTS ── */
+
+    /* Tablet: collapse label column a bit */
+    @media (max-width: 768px) {
+        nav {
+            padding: 16px 24px;
+        }
+
+        #cv-section {
+            padding: 30px 28px 50px;
+        }
+
+        .cv-section-block {
+            grid-template-columns: 160px 1fr;
+            gap: 0 24px;
+        }
+    }
+
+    /* Mobile: stack label above content */
+    @media (max-width: 540px) {
+        nav {
+            padding: 14px 18px;
+        }
+
+        #cv-section {
+            padding: 24px 18px 48px;
+        }
+
+        .cv-section-block {
+            grid-template-columns: 1fr;
+            gap: 8px 0;
+        }
+
+        .cv-left-column {
+            border-left: 3px solid var(--tan-accent);
+            padding-left: 10px;
+            margin-bottom: 12px;
+        }
+
+        .cv-left-column h4 {
+            font-size: 18px;
+        }
+
+        .achievement-details p {
+            margin-left: 8px;
+            text-align: left;
+        }
+
+        .cv-divider {
+            margin: 20px 0;
+        }
+
+        .pill-button {
+            font-size: 14px;
+        }
+
+        .pill-button1 {
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="pill-button">← Back to Profile</a>
+</nav>
+
+<section id="cv-section">
+    <div class="cv-top-row">
+        <h1><strong>Danica N. Cervantes</strong></h1>
+        <h3>Bachelor of Library and Information Science 1-1</h3>
+        <hr class="cv-divider" />
+    </div>
+
+    <!-- PERSONAL INFORMATION -->
+    <div class="cv-section-block">
+        <div class="cv-left-column">
+            <h4>Personal Information</h4>
+        </div>
+        <div class="cv-right-column">
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Date of Birth:</strong></p>
+                <div class="achievement-details"><p>December 3, 2006</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Age:</strong></p>
+                <div class="achievement-details"><p>19 years old</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Email:</strong></p>
+                <div class="achievement-details"><p>nikscervantes@gmail.com</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Phone:</strong></p>
+                <div class="achievement-details"><p>+63 9054402287</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Address:</strong></p>
+                <div class="achievement-details"><p>302 Hungary Blg. Kassel Residences</p></div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="cv-divider" />
+
+    <!-- EDUCATION -->
+    <div class="cv-section-block">
+        <div class="cv-left-column">
+            <h4>Education</h4>
+        </div>
+        <div class="cv-right-column">
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>College:</strong></p>
+                <div class="achievement-details"><p>Polytechnic University of the Philippines — (2025–Present)</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Senior High School:</strong></p>
+                <div class="achievement-details"><p>Moonwalk National High School - (2023-2024)</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Junior High School:</strong></p>
+                <div class="achievement-details"><p>Moonwalk National High School - (2022-2023)</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Elementary School:</strong></p>
+                <div class="achievement-details"><p>Blessed Adelheid Academy Inc. - (2018-2019)</p></div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="cv-divider" />
+
+    <!-- SKILLS -->
+    <div class="cv-section-block">
+        <div class="cv-left-column">
+            <h4>Skills</h4>
+        </div>
+        <div class="cv-right-column">
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Technical Skills:</strong></p>
+                <div class="achievement-details"><p>HTML, CSS, Responsive Layout Design</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Soft Skills:</strong></p>
+                <div class="achievement-details"><p>Communication, Teamwork, Adaptability</p></div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="cv-divider" />
+
+    <!-- ACHIEVEMENTS -->
+    <div class="cv-section-block">
+        <div class="cv-left-column">
+            <h4>Achievements</h4>
+        </div>
+        <div class="cv-right-column">
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Academic Excellence Award:</strong></p>
+                <div class="achievement-details">
+                    <p>Dean's Lister (S.Y. 2025–2026: First Semester)</p>
+                    <p>With Honor — S.Y. 2022–2025</p>
+                    <p>Exemplary Award in Mathematics (S.Y. 2022-2023)</p>
+                    <p>Exemplary Award in Araling Panlipunan (S.Y. 2022-2023) </p>
+                    <p>Exemplary Award in Filipino (S.Y. 2022-2023)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="cv-divider" />
+
+    <!-- FUN FACTS -->
+    <div class="cv-section-block">
+        <div class="cv-left-column">
+            <h4>Fun Facts</h4>
+        </div>
+        <div class="cv-right-column">
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Favorite Food:</strong></p>
+                <div class="achievement-details"><p>Lasagna, Baked Sushi, Kimchi, Pomelo, and Adobo</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Favorite Color:</strong></p>
+                <div class="achievement-details"><p>Yellow</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Hobbies:</strong></p>
+                <div class="achievement-details"><p>Reading, badminton, video games, and sleeping</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Interests:</strong></p>
+                <div class="achievement-details"><p>Reading RomComs and Drawing</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Personality Traits:</strong></p>
+                <div class="achievement-details"><p>Known for being fiercely independent, brutally honest, and adventurous.She is a wild optimists who live by the motto "go big or go home".</p></div>
+            </div>
+            <div class="achievement-block">
+                <p class="achievement-title"><strong>Pet Peeves:</strong></p>
+                <div class="achievement-details"><p>She thrive on freedom and spontaneity. She loathe being controlled, fenced in, or told exactly what to do. 
+Since she value brutal honesty, they cannot stand fake people, liars, or those who criticize others but do the exact same things themselves. 
+She is naturally curious, love to learn, and are eager to explore the world so she is highly irritated by ignorance, stubborn judgmental attitudes, and a lack of curiosity. 
+She appreciate people who "just go for it." Flaking out, breaking promises, or endlessly delaying plans drives them crazy. </p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="contacts1.html" class="pill-button1">Send Message Now</a>
+    </div>
+</section>
+
+</body>
+</html> 
